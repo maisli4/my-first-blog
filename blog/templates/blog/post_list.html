@@ -8,15 +8,10 @@
         </div>
 
         <div>
-            <p>published: 14.06.2014, 12:14</p>
-            <h2><a href="">My first post</a></h2>
-            <p>ya vas a ver, el fútbol va a ser de todes o no va a ser... y sí chabón, llevamos en los botines revolución</p>
-        </div>
-
-        <div>
-            <p>published: 14.06.2014, 12:14</p>
-            <h2><a href="">My second post</a></h2>
-            <p>es sabido, con los genitales no se ganan los partidos</p>
-        </div>
-    </body>
-</html>
+           {% for post in posts %}
+<div>
+        <p> publicado: {{ post.published_date }}</p>
+        <h2><a href="">{{ post.title }}</a></h2>
+        <p>{{ post.text|linebreaksbr }}</p>
+    </div>
+{% endfor %}
